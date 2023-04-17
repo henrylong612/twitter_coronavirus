@@ -38,12 +38,19 @@ values = [item[1] for item in items]
 plt.bar(keys, values)
 
 # set the title and axis labels
-plt.title('Top 10 ' + args.key.capitalize() + ' Counts')
-plt.xlabel(args.key.capitalize())
+if args.input_path[-1] == 'g':
+    plt.title('Use of ' + args.key.capitalize() + ' on Twitter in 2020 by Language')
+    plt.xlabel('Language')
+else:
+    plt.title('Use of ' + args.key.capitalize() + ' on Twitter in 2020 by Country')
+    plt.xlabel('Country')
 if args.percent:
     plt.ylabel('Percent of Total')
 else:
     plt.ylabel('Count')
 
 # save the bar graph as a PNG file
-plt.savefig('top_10_' + args.key + '_counts.png')
+if args.input_path[-1] == 'g':
+    plt.savefig(args.key[1:] + '_lang.png')
+else:
+    plt.savefig(args.key[1:] + '_country.png')
