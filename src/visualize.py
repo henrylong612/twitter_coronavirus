@@ -31,8 +31,9 @@ for k,v in items:
     print(k,':',v)
 
 # create lists of keys and values for the bar graph
-keys = [item[0] for item in items][:9]
-values = [item[1] for item in items][:9]
+items2 = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), reverse=False)
+keys = [item[0] for item in items2[:9]]
+values = [item[1] for item in items[:9]]
 
 # plot the bar graph
 plt.bar(keys, values)
