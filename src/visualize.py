@@ -15,6 +15,7 @@ from collections import Counter,defaultdict
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import numpy as np
 
 # open the input path
 with open(args.input_path) as f:
@@ -33,12 +34,13 @@ for k,v in items:
 # create lists of keys and values for the bar graph
 top_items = sorted(items[:10], key=lambda item: item[1], reverse=False)
 keys = [item[0] for item in top_items]
-print("keys=", keys)
 values = [item[1] for item in top_items]
-print("values=", values)
+
+keysa = np.array(keys)
+valuesa = np.array(values)
 
 # plot the bar graph
-plt.bar(keys, values)
+plt.bar(keysa, valuesa)
 
 # set the title and axis labels
 if args.input_path[-1] == 'g':
