@@ -1,5 +1,7 @@
 # Coronavirus twitter analysis
 
+![Top 10 #covid19 counts](top_10_#covid19_counts.png)
+
 You will scan all geotagged tweets sent in 2020 to monitor for the spread of the coronavirus on social media.
 
 **Learning Objectives:**
