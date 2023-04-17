@@ -31,7 +31,7 @@ for k,v in items:
     print(k,':',v)
 
 # create lists of keys and values for the bar graph
-top_items = sorted(items[:10], key=lambda item: item[0], reverse=False)
+top_items = sorted(items[:10], key=lambda item: item[1], reverse=False)
 keys = [item[0] for item in top_items]
 values = [item[1] for item in top_items]
 
