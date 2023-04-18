@@ -3,13 +3,12 @@
 # command line args
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('--input_paths',nargs='+',required=True)
-parser.add_argument('--output_path',required=True)
 parser.add_argument('--keys',nargs='+',required=True)
 args = parser.parse_args()
 
 # imports
 import os
+import glob
 import json
 from collections import Counter,defaultdict
 import matplotlib
@@ -20,7 +19,7 @@ from datetime import datetime
 
 # load each of the input paths
 total = defaultdict(lambda: Counter())
-for path in args.input_paths:
+for path in glob.glob('geoTwitter*.lang'):
     with open(path) as f:
         tmp = json.load(f)
         filename = os.path.basename(path)
@@ -57,4 +56,4 @@ ax.set_xlabel('Date')
 ax.set_ylabel('Tweet Volume')
 ax.legend()
 
-plt.savefig(args.output_path+'.png')
+plt.savefig('_'.join(args.keys)+'.png')
