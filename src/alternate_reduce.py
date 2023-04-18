@@ -19,7 +19,7 @@ from datetime import datetime
 
 # load each of the input paths
 total = defaultdict(lambda: Counter())
-for path in glob.glob('geoTwitter*.lang'):
+for path in glob.glob('outputs/geoTwitter*.lang'):
     with open(path) as f:
         tmp = json.load(f)
         filename = os.path.basename(path)
