@@ -15,7 +15,6 @@ from collections import Counter,defaultdict
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import numpy as np
 
 # open the input path
 with open(args.input_path) as f:
@@ -44,15 +43,18 @@ plt.xticks(range(len(keys)), keys)
 
 # set the title and axis labels
 if args.input_path[-1] == 'g':
-    plt.title('Use of ' + args.key.capitalize() + ' on Twitter in 2020 by Language')
+    plt.title('Tweet Volume of ' + args.input_path + ' in 2020 by Language')
     plt.xlabel('Language')
 else:
-    plt.title('Use of ' + args.key.capitalize() + ' on Twitter in 2020 by Country')
+    plt.title('Tweet Volume of ' + args.input_path + ' in 2020 by Country')
     plt.xlabel('Country')
 if args.percent:
     plt.ylabel('Percent of Total')
 else:
     plt.ylabel('Count')
+
+plt.rcParams["font.family"] = "Arial"
+plt.rcParams["font.size"] = 12
 
 # save the bar graph as a PNG file
 if args.input_path[-1] == 'g':
