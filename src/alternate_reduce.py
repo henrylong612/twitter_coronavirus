@@ -15,6 +15,8 @@ from collections import Counter,defaultdict
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from datetime import datetime
 
 # load each of the input paths
 total = defaultdict(lambda: Counter())
@@ -39,14 +41,20 @@ for day in total.keys():
         except KeyError:
             pass
 
+fig, ax = plt.subplots()
 for key in new_dict:
-    days = sorted(new_dict[key].keys())
-    values = [new_dict[key][day] for day in days]
-    plt.plot(days, values, label=key)
+    dates = sorted(new_dict[key].keys())
+    values = [new_dict[key][date] for date in dates]
+    days = [datetime.strptime(date, '%y-%m-%d') for date in dates]
+    ax.plot(days, values, label=key)
+
+ax.xaxis.set_major_locator(mdates.MonthLocator())
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%y-%m-%d'))
 
 # Add title and axis labels
-plt.title('Tweet volume by day and hashtag')
-plt.xlabel('Day')
-plt.ylabel('Tweet count')
+ax.set_title('Tweet volume by day and hashtag')
+ax.set_xlabel('Date')
+ax.set_ylabel('Tweet Volume')
+ax.legend()
 
 plt.savefig(args.output_path+'.png')
