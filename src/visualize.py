@@ -32,14 +32,15 @@ for k,v in items:
     print(k,':',v)
 
 # create lists of keys and values for the bar graph
-top_items = sorted(items[:10], key=lambda item: item[1], reverse=True)
+top_items = items[:10] 
 keys = [item[0] for item in top_items]
 values = [item[1] for item in top_items]
 keys = keys[::-1]
 values = values[::-1]
 
 # plot the bar graph
-plt.bar(keys, values)
+plt.bar(range(len(keys)), values)
+plt.xticks(range(len(keys)), keys)
 
 # set the title and axis labels
 if args.input_path[-1] == 'g':
