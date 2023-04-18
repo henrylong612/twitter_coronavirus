@@ -43,18 +43,15 @@ plt.xticks(range(len(keys)), keys)
 
 # set the title and axis labels
 if args.input_path[-1] == 'g':
-    plt.title('Tweet Volume of ' + str(args.key) + ' in 2020 by Language')
+    plt.title(u'Tweet Volume of ' + args.key + ' in 2020 by Language')
     plt.xlabel('Language')
 else:
-    plt.title('Tweet Volume of ' + str(args.key) + ' in 2020 by Country')
+    plt.title(u'Tweet Volume of ' + args.key + ' in 2020 by Country')
     plt.xlabel('Country')
 if args.percent:
     plt.ylabel('Percent of Total')
 else:
     plt.ylabel('Count')
-
-plt.rcParams["font.family"] = "Arial"
-plt.rcParams["font.size"] = 12
 
 # save the bar graph as a PNG file
 if args.input_path[-1] == 'g':
