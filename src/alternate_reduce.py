@@ -56,4 +56,8 @@ ax.set_xlabel('Date')
 ax.set_ylabel('Tweet Volume')
 ax.legend()
 
-plt.savefig('_'.join(args.keys)+'.png')
+tags = []
+for key in args.keys:
+    tags.append(key[1:])
+
+plt.savefig('_'.join(tags)+'.png')
