@@ -43,10 +43,10 @@ plt.xticks(range(len(keys)), keys)
 
 # set the title and axis labels
 if args.input_path[-1] == 'g':
-    plt.title('Tweet Volume of ' + args.input_path + ' in 2020 by Language')
+    plt.title('Tweet Volume of ' + str(args.key) + ' in 2020 by Language')
     plt.xlabel('Language')
 else:
-    plt.title('Tweet Volume of ' + args.input_path + ' in 2020 by Country')
+    plt.title('Tweet Volume of ' + str(args.key) + ' in 2020 by Country')
     plt.xlabel('Country')
 if args.percent:
     plt.ylabel('Percent of Total')
