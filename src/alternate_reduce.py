@@ -48,7 +48,7 @@ for key in new_dict:
     days = [datetime.strptime(date, '%y-%m-%d') for date in dates]
     ax.plot(days, values, label=key)
 
-ax.xaxis.set_major_locator(mdates.MonthLocator())
+ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%y-%m-%d'))
 
 # Add title and axis labels
