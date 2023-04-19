@@ -51,7 +51,6 @@ ax.xaxis.set_major_locator(mdates.MonthLocator(interval=3))
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%y-%m-%d'))
 
 # Add title and axis labels
-ax.set_title('Tweet volume by day and hashtag')
 ax.set_xlabel('Date')
 ax.set_ylabel('Tweet Volume')
 ax.legend()
