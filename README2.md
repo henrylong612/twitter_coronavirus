@@ -15,4 +15,6 @@ For example, the graphs below show the top 10 languages and countries for the us
 
 The `alternate_reduce.py` file takes several `--keys` as inputs and outputs a line graph of the use of each key (in tweet volume) throughout the year.
 
-![#coronavirus and #코로나바이 throughout 2020](coronavirus_\354\275\224\353\241\234\353\202\230\353\260\224\354\235\264\353\237\254.png)
+![#coronavirus and #covid19 throughout 2020](covid19_coronavirus.png)
+
+
