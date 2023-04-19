@@ -14,31 +14,38 @@ python3 ./src/visualize.py --input_path=reduced.lang --key='#coronavirus'
 ```
 We get
 
-Use of #coronavirus in 2020 by Language
+##Use of #coronavirus in 2020 by Language
+
 ![#coronavirus by language](coronavirus_lang.png)
+
 By running the command
 ```
 python3 ./src/visualize.py --input_path=reduced.country --key='#coronavirus'
 ```
 We get
 
-Use of #coronavirus in 2020 by Country
+##Use of #coronavirus in 2020 by Country
+
 ![#coronavirus by country](coronavirus_country.png)
+
 By running the command
 ```
 python3 ./src/visualize.py --input_path=reduced.lang --key='#코로나바이러스'
 ```
 We get
 
-Use of #코로나바이러 in 2020 by Language
+##Use of #코로나바이러 in 2020 by Language
+
 ![#코로나바이러by language](코로나바이러스_lang.png)
+
 By running the command
 ```
 python3 ./src/visualize.py --input_path=reduced.country --key='#코로나바이러스'
 ```
 We get
 
-Use of #코로나바이러 in 2020 by Country
+##Use of #코로나바이러 in 2020 by Country
+
 ![#코로나바이러by country](코로나바이러스_country.png)
 
 The `alternate_reduce.py` file takes several `--keys` as inputs and outputs a line graph of the use of each key (in tweet volume) throughout the year.
@@ -48,13 +55,15 @@ By running the command
 python3 ./src/alternate_reduce.py --keys '#doctor' '#nurse'
 ```
 We get 
-Use of #doctor and #nurse Throughout 2020
+##Use of #doctor and #nurse Throughout 2020
+
 ![#covid19 and #coronavirus throughout 2020](covid19_coronavirus.png)
 By running the command
 ```
 python3 ./src/alternate_reduce.py --keys '#doctor' '#nurse'
 ```
 We get
-Use of #doctor and #nurse Throughout 2020
+##Use of #doctor and #nurse Throughout 2020
+
 ![#doctor and #nurse throughout 2020](doctor_nurse.png)
 
