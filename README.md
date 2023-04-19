@@ -23,7 +23,7 @@ generates a file called `reduced.lang` that contains data for all of hashtag usa
 ```
 $ python3 ./src/reduce.py --input_paths outputs/geoTwitter20-*.country --output_path=reduced.country
 ```
-generates a file called `reduced.counrty` that contains data for all of hashtag usage by country for all of 2020.
+generates a file called `reduced.country` that contains data for all of hashtag usage by country for all of 2020.
 
 The `visualize.py` file takes `--input_path` and `--key` as inputs and generates a bar graph of the the top 10 languages/countries (depending on the `--input_path`) that used the hashtag specified by `--key` and stores the bar graph as a png file. For example, by running the command 
 ```
@@ -83,4 +83,3 @@ We get
 ## Use of #doctor and #nurse Throughout 2020
 
 ![#doctor and #nurse throughout 2020](doctor_nurse.png)
-
